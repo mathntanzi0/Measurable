@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.netanzi.measurable.FirstFragment"
+        android:label="@string/skill"
+        tools:layout="@layout/fragment_first"/>
+    <fragment
+        android:id="@+id/Skills"
+        android:name="com.netanzi.measurable.SkillsFragment"
+        android:label="Skills"
+        tools:layout="@layout/fragment_skills"/>
+    <fragment
+        android:id="@+id/AddSkillFragment"
+        android:name="com.netanzi.measurable.AddSkillFragment"
+        android:label="Skills ~ Add Skill"
+        tools:layout="@layout/fragment_add_skill" />
+</navigation>
