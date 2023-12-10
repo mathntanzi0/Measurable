@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class SkillModel {
-    private static ArrayList<SkillModel> skills;
+    public static ArrayList<SkillModel> skills = new ArrayList<>();
     private final int skillID;
     private String title;
     private String description;

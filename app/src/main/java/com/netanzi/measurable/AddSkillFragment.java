@@ -1,63 +1,62 @@
 package com.netanzi.measurable;
 
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AddSkillFragment#newInstance} factory method to
- * create an instance of this fragment.
- *
- */
+import com.netanzi.measurable.databinding.FragmentAddSkillBinding;
+import com.netanzi.measurable.databinding.FragmentFirstBinding;
+
+import java.util.ArrayList;
+
 public class AddSkillFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AddSkillFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AddSkillFragment newInstance(String param1, String param2) {
-        AddSkillFragment fragment = new AddSkillFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    public AddSkillFragment() {
-        // Required empty public constructor
-    }
+    private FragmentAddSkillBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+
+        binding.btnCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createSkill();
+                NavHostFragment.findNavController(AddSkillFragment.this)
+                        .navigate(R.id.action_AddSkillFragment_to_FirstFragment);
+            }
+        });
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_skill, container, false);
+        binding = FragmentAddSkillBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
+    public void createSkill(){
+        String skillTitle = binding.etSkillName.getText().toString();
+        String skillDesc = binding.etDescription.getText().toString();
+        String metrics = binding.etMetrics.getText().toString();
+        ArrayList<String> skillMetrics = new ArrayList<>();
+
+        String[] metricsArray = metrics.split(",");
+        for (String metric : metricsArray) {
+            String trimmedMetric = metric.trim();
+            skillMetrics.add(trimmedMetric);
+        }
+
+        SkillModel skill = new SkillModel(0,skillTitle, skillDesc, 0, skillMetrics);
+        SkillModel.skills.add(skill);
     }
 }
