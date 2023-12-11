@@ -17,6 +17,9 @@ public class ExerciseModel {
     public Map<String, Double> getResults() {
         return results;
     }
+    public double getValue(String key){
+        return results.get(key);
+    }
 
     public void setResults(Map<String, Double> results) {
         this.results = results;

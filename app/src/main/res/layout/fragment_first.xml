@@ -6,34 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".FirstFragment">
 
-    <androidx.core.widget.NestedScrollView
+    <EditText
+        android:id="@+id/edit_text_search"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/button">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/search_skill_placeholder"
+        android:background="@drawable/edit_text_background"
+        android:padding="13dp"
+        android:maxLength="255"
+        android:textColorHint="#A9A9A9"
+        android:textSize="16sp"
+        android:inputType="text"
+        android:importantForAutofill="no"
+        android:layout_margin="16dp"/>
 
-        <LinearLayout
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text_search"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_metrics"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="wrap_content"/>
 
-            <EditText
-                android:id="@+id/edit_text_search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="@string/search_skill_placeholder"
-                android:background="@drawable/edit_text_background"
-                android:padding="13dp"
-                android:maxLength="255"
-                android:textColorHint="#A9A9A9"
-                android:textSize="16sp"
-                android:inputType="text"
-                android:importantForAutofill="no" />
 
-            <!-- Add your other views or fragments here -->
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
