@@ -47,4 +47,20 @@ public class ExerciseModel {
     public void setDate(LocalDateTime date) {
         this.date = date;
     }
+
+    public double getScore() {
+        if (results == null || results.isEmpty()) {
+            return 0.0; // Return a default value if there are no results
+        }
+
+        double sum = 0.0;
+        int count = 0;
+
+        for (Double value : results.values()) {
+            sum += value;
+            count++;
+        }
+
+        return sum / count;
+    }
 }

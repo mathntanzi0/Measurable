@@ -37,7 +37,7 @@ public class MetricRecyclerViewAdapter extends RecyclerView.Adapter<MetricRecycl
     public void onBindViewHolder(@NonNull MetricViewHolder holder, int position) {
         String metric = metrics.get(position);
         holder.textViewMetric.setText(metric);
-        holder.textViewValue.setText(metricValues.get(metric).toString());
+        holder.textViewValue.setText(Utilities.roundToTwoDecimalPlaces(metricValues.get(metric)));
         holder.textViewValue.setTextColor(getColorForValue(metricValues.get(metric)));
     }
 

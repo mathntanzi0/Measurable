@@ -62,7 +62,8 @@ public class SkillRecyclerViewAdapter extends RecyclerView.Adapter<SkillRecycler
         SkillModel currentItem = metricList.get(position);
 
         holder.titleTextView.setText(currentItem.getTitle());
-        holder.valueTextView.setText(String.valueOf(currentItem.getScore()));
+        String score = Utilities.roundToTwoDecimalPlaces(currentItem.getScore()) + "%";
+        holder.valueTextView.setText(score);
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +84,7 @@ public class SkillRecyclerViewAdapter extends RecyclerView.Adapter<SkillRecycler
         } else {
             LocalDateTime recentDate = currentItem.getRecentDate();
 
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MMM dd HH:mm:ss");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy MMM dd HH:mm");
 
             String formattedDate = recentDate.format(formatter);
 

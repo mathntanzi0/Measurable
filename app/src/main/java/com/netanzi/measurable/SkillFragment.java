@@ -8,6 +8,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,7 +48,8 @@ public class SkillFragment extends Fragment {
 
         binding.tvSkillTitle.setText(SkillModel.skill.getTitle());
         binding.tvSkillDesc.setText(SkillModel.skill.getDescription());
-        binding.tvSkillScore.setText(String.valueOf(SkillModel.skill.getScore()));
+        String score = Utilities.roundToTwoDecimalPlaces(SkillModel.skill.getScore()) + "%";
+        binding.tvSkillScore.setText(score);
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +57,15 @@ public class SkillFragment extends Fragment {
                 NavHostFragment.findNavController(SkillFragment.this).navigate(R.id.action_SkillFragment_to_ResultsFragment);
             }
         });
+
+        ExerciseRecyclerViewAdapter exerciseRecyclerViewAdapter = new ExerciseRecyclerViewAdapter(requireContext(), SkillModel.skill.getExercises());
+
+        GridLayoutManager layoutManager = new GridLayoutManager(requireContext(), 1);
+        layoutManager.setReverseLayout(true);
+
+        binding.recyclerviewExercises.setLayoutManager(layoutManager);
+        binding.recyclerviewExercises.setAdapter(exerciseRecyclerViewAdapter);
+
 
     }
 

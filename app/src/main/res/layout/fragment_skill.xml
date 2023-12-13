@@ -17,7 +17,8 @@
             android:id="@+id/tv_skill_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"/>
+            android:textSize="22sp"
+            android:text="Title"/>
         <TextView
             android:id="@+id/tv_skill_desc"
             android:layout_width="wrap_content"
@@ -35,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Score"
-                android:textSize="18sp"/>
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/tv_skill_score"
@@ -43,11 +44,11 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="4dp"
                 android:text="50%"
-                android:textSize="18sp"/>
+                android:textSize="16sp"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_metrics"
+            android:id="@+id/recyclerview_exercises"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"/>

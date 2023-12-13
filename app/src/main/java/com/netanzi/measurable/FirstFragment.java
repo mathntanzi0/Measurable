@@ -54,7 +54,11 @@ public class FirstFragment extends Fragment {
 
 
         SkillRecyclerViewAdapter skillRecyclerViewAdapter = new SkillRecyclerViewAdapter(requireContext(), SkillModel.skills, FirstFragment.this);
-        binding.recyclerviewMetrics.setLayoutManager(new GridLayoutManager(requireContext(),1));
+
+        GridLayoutManager layoutManager = new GridLayoutManager(requireContext(), 1);
+        layoutManager.setReverseLayout(true);
+
+        binding.recyclerviewMetrics.setLayoutManager(layoutManager);
         binding.recyclerviewMetrics.setAdapter(skillRecyclerViewAdapter);
     }
 
