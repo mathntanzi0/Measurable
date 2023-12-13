@@ -13,12 +13,10 @@
         <action
             android:id="@+id/action_FirstFragment_to_AddSkillFragment"
             app:destination="@id/AddSkillFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_SkillFragment"
+            app:destination="@id/SkillFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/Skills"
-        android:name="com.netanzi.measurable.SkillsFragment"
-        android:label="Skills"
-        tools:layout="@layout/fragment_skills"/>
     <fragment
         android:id="@+id/AddSkillFragment"
         android:name="com.netanzi.measurable.AddSkillFragment"
@@ -27,5 +25,26 @@
         <action
             android:id="@+id/action_AddSkillFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ResultsFragment"
+        android:name="com.netanzi.measurable.ResultsFragment"
+        android:label="Add Results"
+        tools:layout="@layout/fragment_results" >
+        <action
+            android:id="@+id/action_ResultsFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SkillFragment"
+        android:name="com.netanzi.measurable.SkillFragment"
+        android:label="Skill"
+        tools:layout="@layout/fragment_skill">
+        <action
+            android:id="@+id/action_SkillFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SkillFragment_to_ResultsFragment"
+            app:destination="@id/ResultsFragment" />
     </fragment>
 </navigation>

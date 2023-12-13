@@ -45,7 +45,7 @@
     </string>
     <string name="search_skill_placeholder">Search skill...</string>
     <string name="skill">Skills</string>
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="enter_skill_name">Enter skill name...</string>
     <string name="skill_name">Skill Name</string>
@@ -54,4 +54,8 @@
     <string name="metric_example_text">Enter all metrics below, separated with a comma (,) E.g. Writing, Reading, Speaking...</string>
     <string name="metrics">Metrics</string>
     <string name="enter_metrics">Enter metrics...</string>
+    <string name="instruction_filling_metrics">Fill all the following metrics with any value of interest</string>
+    <string name="save">Save</string>
+    <string name="enter_numeric_value">Enter numeric value...</string>
+    <string name="none">None</string>
 </resources>

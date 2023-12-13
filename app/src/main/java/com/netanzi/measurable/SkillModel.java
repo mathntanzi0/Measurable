@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class SkillModel {
+    public static SkillModel skill;
     public static ArrayList<SkillModel> skills = new ArrayList<>();
     private final int skillID;
     private String title;
@@ -24,6 +25,7 @@ public class SkillModel {
         this.description = "description";
         this.score = 0;
         this.metrics = null;
+        exercises = new ArrayList<>();
     }
 
     /**
@@ -41,6 +43,7 @@ public class SkillModel {
         this.description = description;
         this.score = score;
         this.metrics = metrics;
+        exercises = new ArrayList<>();
     }
 
     /**
@@ -97,13 +100,28 @@ public class SkillModel {
     public void setMetrics(ArrayList<String> metrics) {
         this.metrics = metrics;
     }
-
+    public int getMetricsSize(){
+        return metrics.size();
+    }
+    public int getExercisesSize(){
+        return exercises.size();
+    }
     public ArrayList<ExerciseModel> getExercises() {
         return exercises;
     }
-
+    public ExerciseModel getExercise(int index){
+        return exercises.get(index);
+    }
+    public LocalDateTime getRecentDate(){
+        if (exercises.size() < 1)
+            return null;
+        return getExercise(exercises.size()-1).getDate();
+    }
     public void setExercises(ArrayList<ExerciseModel> exercises) {
         this.exercises = exercises;
+    }
+    public void addExercise(ExerciseModel exercise){
+        exercises.add(exercise);
     }
     /*public void addMetric(String name, double value){
         score = ((score * metrics.size()) + value) / (metrics.size() + 1);

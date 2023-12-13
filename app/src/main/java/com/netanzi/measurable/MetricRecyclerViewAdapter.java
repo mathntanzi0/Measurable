@@ -29,7 +29,7 @@ public class MetricRecyclerViewAdapter extends RecyclerView.Adapter<MetricRecycl
     @Override
     public MetricViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.metric_item, parent, false);
+                .inflate(R.layout.item_metric, parent, false);
         return new MetricViewHolder(itemView);
     }
 
@@ -46,10 +46,16 @@ public class MetricRecyclerViewAdapter extends RecyclerView.Adapter<MetricRecycl
         return metrics.size();
     }
 
+    private int darkenColor(int color) {
+        float[] hsv = new float[3];
+        Color.colorToHSV(color, hsv);
+        hsv[2] *= 0.8f; // Reduce brightness by 20%
+        return Color.HSVToColor(hsv);
+    }
     public int getColorForValue(double value) {
-        int redColor = Color.RED;
-        int orangeColor = Color.parseColor("#FFA500");
-        int greenColor = Color.GREEN;
+        int redColor = darkenColor(Color.RED);
+        int orangeColor = darkenColor(Color.parseColor("#FFA500"));
+        int greenColor = darkenColor(Color.GREEN);
 
         int color;
 

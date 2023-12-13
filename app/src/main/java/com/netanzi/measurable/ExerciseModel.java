@@ -1,6 +1,7 @@
 package com.netanzi.measurable;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.Map;
 
 public class ExerciseModel {
@@ -8,6 +9,17 @@ public class ExerciseModel {
     private Map<String, Double> results;
     private LocalDateTime date;
 
+    public ExerciseModel(int exerciseID, LocalDateTime date) {
+        this.exerciseID = exerciseID;
+        this.date = date;
+        results = new HashMap<>();
+    }
+
+    public ExerciseModel(int exerciseID, Map<String, Double> results, LocalDateTime date) {
+        this.exerciseID = exerciseID;
+        this.results = results;
+        this.date = date;
+    }
 
     /** Getters and Setters */
     public int getExerciseID() {
@@ -19,6 +31,9 @@ public class ExerciseModel {
     }
     public double getValue(String key){
         return results.get(key);
+    }
+    public void addResult(String key, double value){
+        results.put(key, value);
     }
 
     public void setResults(Map<String, Double> results) {

@@ -52,23 +52,8 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        ArrayList<String> metrics = new ArrayList<>();
-        metrics.add("Hello");
-        metrics.add("Math");
 
-        ArrayList<String> metrics1 = new ArrayList<>();
-        metrics1.add("Hello");
-        metrics1.add("Math");
-        metrics1.add("Sleep");
-        metrics1.add("Math");
-        metrics1.add("Zine");
-
-        SkillModel.skills.add(new SkillModel(1, "Learning", "Just Learning", 60.6, metrics1));
-        SkillModel.skills.add(new SkillModel(2, "Kissing", "Just Learning", 70.6, metrics));
-        SkillModel.skills.add(new SkillModel(2, "Kissing", "Just Learning", 70.6, metrics1));
-
-
-        SkillRecyclerViewAdapter skillRecyclerViewAdapter = new SkillRecyclerViewAdapter(requireContext(), SkillModel.skills);
+        SkillRecyclerViewAdapter skillRecyclerViewAdapter = new SkillRecyclerViewAdapter(requireContext(), SkillModel.skills, FirstFragment.this);
         binding.recyclerviewMetrics.setLayoutManager(new GridLayoutManager(requireContext(),1));
         binding.recyclerviewMetrics.setAdapter(skillRecyclerViewAdapter);
     }

@@ -56,7 +56,7 @@ public class AddSkillFragment extends Fragment {
             skillMetrics.add(trimmedMetric);
         }
 
-        SkillModel skill = new SkillModel(0,skillTitle, skillDesc, 0, skillMetrics);
+        SkillModel skill = new SkillModel(SkillModel.skills.size()+1,skillTitle, skillDesc, 0, skillMetrics);
         SkillModel.skills.add(skill);
     }
 }
