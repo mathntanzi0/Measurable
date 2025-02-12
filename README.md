@@ -20,14 +20,14 @@ Measurable is an Android app designed to help users track their skill developmen
 - **Local Storage:** SQLite
 
 ## Explanation of Screenshots
-1. ![Screenshot_20250212-215045_Measurable](https://github.com/user-attachments/assets/126b1133-7578-4139-a50d-2f0db23e0b33)
-Shows the main screen where users can log their performance metrics.
-2.![Screenshot_20250212-215144_Measurable](https://github.com/user-attachments/assets/68ea80cc-3440-438c-b2b6-99dbd8b1db90)
- Displays a history of recorded skill performances.
-3.![Screenshot_20250212-215215_Measurable](https://github.com/user-attachments/assets/d6f34c7d-3d6e-4b9f-9a3b-20032dac6912)
- Demonstrates progress tracking.
-4.![Screenshot_20250212-215045_Measurable](https://github.com/user-attachments/assets/1c26ad3b-9454-4940-8c2d-1e1a7cb3a600)
- Provides a detailed breakdown of an individual skill’s improvement over time.
+1. Main Screen
+<img src="https://github.com/user-attachments/assets/126b1133-7578-4139-a50d-2f0db23e0b33" width="400"> The main screen where users can log their performance metrics.
+2. Performance History
+<img src="https://github.com/user-attachments/assets/68ea80cc-3440-438c-b2b6-99dbd8b1db90" width="400"> A history of recorded skill performances.
+3. Progress Tracking
+<img src="https://github.com/user-attachments/assets/d6f34c7d-3d6e-4b9f-9a3b-20032dac6912" width="400"> A visualization of progress tracking over time.
+4. Skill Breakdown
+<img src="https://github.com/user-attachments/assets/1c26ad3b-9454-4940-8c2d-1e1a7cb3a600" width="400"> A detailed breakdown of an individual skill’s improvement over time.
 
 ## Installation
 1. Clone the repository:
