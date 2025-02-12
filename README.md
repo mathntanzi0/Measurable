@@ -1,4 +1,4 @@
-![Screenshot_20250212-215045_Measurable](https://github.com/user-attachments/assets/fdbf5af3-d318-4326-a97d-8b3cf6324d27)# Measurable
+# Measurable
 
 ## Overview
 Measurable is an Android app designed to help users track their skill development over time. By recording tested performance on specific skills, users can visualize their progress and stay motivated to continue improving.
