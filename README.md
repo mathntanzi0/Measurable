@@ -6,7 +6,7 @@ Measurable is an Android app designed to help users track their skill developmen
 ## Features
 - Track and record skill performance over time.
 - Store test results using Android's built-in SQLite database.
-- View progress through.
+- View progress.
 - User-friendly interface for quick and easy updates.
 
 ## How It Works
